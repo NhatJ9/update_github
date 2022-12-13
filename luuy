@@ -1,0 +1,767 @@
+<!--h1 - h6 - heading: tieu đề
+    p - paragraph: đoạn văn 
+    ul, li - unodered list, list: hiển thị danh sách
+    table: bãng
+    a - anchor: mỏ neo(bỏ đường link vào để có thể tưới được trang wep đó)-->
+
+
+/* Lựa chọn toàn bộ các thẻ */
+* {
+    /* `font-style: italic` là chữ nghiêng */
+    font-style: italic;
+}
+
+/* Lựa chọn toàn bộ các thẻ p */
+p {
+    /* `text-decoration: underline` là chữ gạch chân */
+    text-decoration: underline;
+}
+
+/* Lựa chọn toàn bộ các thẻ có class-1 */
+.class-1 {
+    color: red;
+}
+
+/* Lựa chọn toàn bộ thẻ đồng thời có cả class-2 và class-3 */
+.class-2.class-3 {
+    color: green;
+}
+
+/* Lựa chọn thẻ có class-5 là con của thẻ class-4 */
+.class-4 .class-5 {
+    color: violet;
+}
+
+/* Lựa chọn toàn bộ các thẻ p có class-6 */
+p.class-6 {
+    color: blue;
+}
+
+/* Lựa chọn toàn bộ các thẻ h3, h4 */
+h3, h4 {
+    color: brown;
+}
+
+/* Lựa chọn toàn bộ thẻ li là con của class list */
+.list li {
+    color: deepskyblue;
+}
+
+/* Lựa chọn toàn bộ thẻ li là con trực tiếp của thẻ có class list */
+.list > li {
+    color: fuchsia;
+}
+
+/* Lựa chọn 1 thẻ p đứng liền kề sau class-9 */
+.class-9 + p {
+    color: goldenrod;
+}
+
+/* Lựa chọn toàn bộ thẻ p đứng sau class-10 */
+.class-10 ~ p {
+    color: limegreen;
+}
+
+////////////////////////////////////////////////////////////////
+
+/**
+* Các bạn chưa cần học phần dưới này, đây là
+* CSS selectors nâng cao, mình sử dụng để
+* hiển thị tên class bên cạnh mỗi đoạn văn
+* trên giao diện.
+*/
+[class]::after {
+    /* Bạn có thể comment dòng dưới đây để biết tác dụng của nó */
+    content: " ("  attr(class) ")";
+}
+Internal, External
+Inline - 1000
+#id -100
+.class - 10
+.tag - 1 (Name)
+Equal specificity?
+Universal selector and inherited? (all hieu ung)
+!important < dac biet uu tien >
+////////////////////////////////////////////////////////////////
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+
+
+        <input name="gender" type="radio">
+        <input name="gender" type="radio">
+        <input name="gender" type="radio">
+        <!-- chỉ chọn 1 cái -->
+////////////////////////////////////////////////////////////////
+        <table>
+            <thead><!--Phần đầu của bảng-->  
+                <th>STT</th>
+                <th>NAME</th>
+                <th>DIACHI</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nam</td>
+                    <td>quang nam</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Nam</td>
+                    <td>quang nam</td>
+                </tr>
+            </tbody>
+        </table>
+////////////////////////////////////////////////////////////////
+Các đơn vị trong CSS
+
+
+Absolute units?
+px pt cm mm ....
+Relative units?
+% : thay đổi theo thẻ chứa nó (không cố định)
+
+rem : thay đổi theo thẻ html 
+    vd : 
+        html {
+            font-side: 20px;
+        }
+        h1{
+            font-size: 2rem;
+        }
+        1rem sẽ bằng 16px, 2rem sẽ bằng 32px.
+
+html {
+    font-size: 62.5%;
+}
+
+#heading {
+    font-size: 2rem;
+}
+
+.sub-heading {
+    font-size: 1.6rem;
+}
+
+.text, ol li {
+    font-size: 1.4rem;
+}
+
+==>> sử dụng theo rem sẽ giúp ta thay đổi 1 cách nhanh chóng
+
+em: phụ thuộc vào thẻ cha gần nhất 
+vw:  -  Width : chiều rộng
+vh:  -  Height: chiều cao
+phụ thuộc vào kích thước của trình duyệt vd: 
+50vw = 50% trình duyệt theo chiều rộng, 50vh =  50% trình duyệt theo chiều ngang
+////////////////////////////////////////////////////////////////
+
+-Một số hàm trong css
+var()
+
+đặt biến
+
+c1
+:root {
+    --text-color: violet;
+}
+Đặt biến giúp sửa nhanh hơn
+
+h1 {
+    color: var(--text-color)
+}
+h2 {
+  color: var(--text-color)
+}
+
+
+c2
+h3 {
+    --my-color: red;
+    color: var(--my-color)
+}
+
+
+
+linear - gradient()
+rgba()
+rgb() : Sử dụng trong sự thay đổi màu 
+    vd:     backround: rgb(0, 0, 0);
+calc(): Sử dụng để tính toán trong with với Height
+    vd:     with( 50% + 20px)   with( 107px * 20px)
+attr():
+    vd
+
+////////////////////////////////////////////////////////////////
+
+
+Pseudo classes trong Css
+Link All peseeudo class (https://www.w3schools.com/css/css_pseudo_classes.asp)
+:root
+    vd:
+        :root {
+            --text-color: violet;
+        }
+        Đặt biến giúp sửa nhanh hơn
+
+        h1 {
+            color: var(--text-color)
+        }
+        h2 {
+            color: var(--text-color)
+         }
+
+:hover ---> Kích hoạt khi dy chuyển chuột lên
+    vd:     h1:hover{
+                color: red;
+            }
+
+:active ---> Thay đổi khi bấm vào
+vd:     h1:active{
+                color: red;
+            }
+
+
+:first-child: Thay đổi thằng đầu (Thay đổi được tất cả các thuộc tính)
+:last-child: Thay đỏi thằng cuối
+    vd: 
+        <ul>
+            <li>first-child</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>last-child</li>
+        </ul>
+
+        li:first-child{
+            color: red;
+        }                       
+
+        li:last-child{
+            color: red;
+        }
+q:lang(no) {
+  quotes: "~" "~";
+}
+In this example, :lang defines the quotation marks for q elements with lang="no"
+////////////////////////////////////////////////////////////////
+
+CSS pseudo - elements
+::before   :Trước
+::after     :Sau
+Thêm 1 block vào sau và 1 block vào trức vài thẻ div có dạng block khi cần thiết
+    vd:     
+    <style>
+            .box::before{
+                content: "Xin chào";       // phần bắt buộc cho vào 
+                font-size: 10px;
+                color: black;
+                display: block; // có dạng khối và đưa nội dung vào
+                with: 50px;
+                height: 50px;
+                backround-color: white;
+            }
+            .box::after{
+                content: "";       // phần bắt buộc cho vào 
+                display: block; // có dạng khối
+                with: 50px;
+                height: 50px;
+                backround-color: white;
+            }
+    </style>
+    <body>
+        <div class="box"></div>
+    </body>
+
+
+
+::first-letter ---> //Thay đổi chữ cái đầu to lên hay nhỏ xuống hay các thuộc tính khác
+    vd: 
+        <style>
+            h1::first-letter{
+                font-size:23px;
+                color: pink;
+            }
+        </style>
+
+        <body>
+            <h1>CSS pseudo - pelement  <br /> Dòng thứ hai </h1>
+        </body>
+
+
+::first-line -->// dòng đầu tiên bị thay đổi
+
+
+::selection: //kéo đè lựa chọn bằng chuột trái thì sẽ thay đổi
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+//////////////////////////////////////////////////////////////////////////
+padding: //Đệm thêm vào giúp cả cái backround giày hẳn lên trên(Đệm thêm làm to ra)
+        top
+        bottom
+        right
+        left
+padding: 10px;   -> cả 4 hướng bằng 10
+padding: 10px 12px; ->(Trên dưới) and (trái phải)
+padding: 10px 12px 8px; -> Trên and (Trái Phải) and Dưới
+padding: 10px 12px 8px 6px; -> Trên Phỉa Dưới Trái
+
+//////////////////////////////////////////////////////////////////////////
+boder:
+//Những kiểu boder 
+border-style: inherit; giá trị ban đầu
+border-style:none; hủy, không xét boder
+border-style:solide; kiểu nét liền
+border-style:dashet; kiểu nét đứt
+border-
+border-
+//Thay đổi màu của boder: 
+border-color:;
+//Độ dày của boder
+border-width:;
+border-top-width:;
+border-right-width:;
+border-left-width:;
+border-bottom-width:;
+
+=====>> viết gọn lại về border:
+border: 10px solid #333;
+border-top: 10px solid #333;....
+//////////////////////////////////////////////////////////////////////////
+margin: => khoảng cách
+margin: 10px;   -> cả 4 hướng bằng 10
+margin: 10px 12px; ->(Trên dưới) and (trái phải)
+margin: 10px 12px 8px; -> Trên and (Trái Phải) and Dưới
+margin: 10px 12px 8px 6px; -> Trên Phỉa Dưới Trái
+//////////////////////////////////////////////////////////////////////////
+float: left;
+==>> Đưa tất cả các bộ phận sang phía mà mình mong muốn
+//////////////////////////////////////////////////////////////////////////
+box-sizing: border-box;
+=>Giữ kích thước cũ khi thêm các thuộc tính margin hay padding... 
+thì kích thước ban đầu sẽ  dc dữ nghuyên và không bị thay đổi
+box-sizing: unset; --> trả về mặc định 
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+backround
+.header{
+    width: 100%;
+    height: 100vh;
+    //Ảnh
+    backround-image: url();
+
+    //Ảnh chồng ảnh
+    backround-image: url(), url();// có thể chồng nhiều ảnh lên nhau
+
+    //Màu chuyển 
+    backround-image: linear-gradient(0deg, #333, #ccc);
+   (Chiều xoay( 0 độ, 90 độ, 180 độ...), màu a, màu b)
+    //màu chuyển trong suốt
+    backround-image: linear-gradient(0deg, rgba(255, 255, 0, 0.5),
+                                           rgba(255, 255, 0, 0.5));
+                                           (Mã màu,,, mức độ trong xuốt từ 0-1)
+
+    // màu chuyển trong suốt chồng ảnh
+    backround-image: linear-gradient(0deg, rgba(255, 255, 0, 0.5), 
+                                           rgba(255, 255, 0, 0.5)),
+                                           url(Link ảnh);
+   
+
+    backround-size: 100% auto; // chiều dài 100% còn chiều rộng là tùy vào hình ảnh
+    backround-size: 100%; //chỉ rộng bàng kích thước cha
+    backround-size: 100px 50px; //chiều dài chiều rộng
+
+
+    backround-size: cover; 
+    // hiển thị full màn hình và lấy chiều dài nhất làm trọng tâm 
+    //sẳn sàng cắt bức ảnh đi để vừa với khung hình
+    backround-size: content; hiển thị tất cả bức ảnh k cắt j cả
+    .box {
+    width: 300px;
+    height: 500px;
+    background-image: url(https://fullstack.edu.vn/assets/images/f8_avatar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+
+
+    backround-repeat: repeat;// lặp lại nhiều(có thể tạo một hình nền lớn
+    sau khi lặp lại ảnh nhiều lần)
+    //CÁCH Lấy ảnh lặp lại để tạo thành 1 hình nền đẹp 
+    //repeat backround stcok image
+    backround-repeat: no-repeat; // chỉ hiển thị một ảnh
+    backround-repeat: repeat-x;//lặp lại chiều ngang
+    backround-repeat: repeat-y; //lặp lại chiều dọc
+    không có thuộc tính trên thì nó xẽ hiển thị ra nhiều ảnh như nhau
+}
+
+.box {
+    height: 500px;
+    background-image: url(https://fullstack.edu.vn/assets/images/f8_avatar.png);
+    background-repeat: repeat-y;
+    background-size: 150px;
+}
+
+
+.backround-origin:
+.backround-origin{
+    width: 1000px;
+    height: 1000px;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 10px dashed #333;
+    padding: 20px;
+    box-sizing: border-box;
+    /* background-origin: padding-box; */ 
+    /* Hình ảnh đổ từ padding vào */
+
+    /* background-origin: border-box; */
+    /* Hình ảnh đổ từ border vào */
+
+    background-origin: content-box;
+    /* Hình ảnh đổ từ content vào */
+
+}
+
+
+background-position:
+    /* background-position: */
+    
+    /* background-position: top; */
+    /* background-position: bottom center; */
+    /* background-position: right; */
+    background-position: bottom 20px right 30px;
+    /* background-position: bottom -20px right -30px; */
+    /* background-position: 20px; */
+    /* background-position: 20px 60%;
+    background-position: -20px 60px; */
+
+shorthand trong background:
+    backround: url() no-repeat center / contain;
+//////////////////////////////////////////////////////////////////////////
+position
+
+
+position relative: //co hte de lên cac  thuoc tinh khac
+vd:
+    <h1>Thong tin ca nhan</h1>
+        <ul>
+            <li>Name</li>
+            <li>Id</li>
+            <li>GPA</li>
+            <li>NS</li>
+            <li>Lop</li>
+        </ul>
+
+
+        h1{
+            position: relative;
+            top: 100px;
+            left: 20px;
+        }
+
+position absolute: // phu thuoc vao the cha gan nhat
+
+vd:
+    <div class="box1">
+            <div class="box2">
+                <div class="box3"></div>
+            </div>
+        </div>
+
+
+        .box1{
+        width: 100%;
+        height: 120px;
+        background-color: #111;
+        position: relative;
+    }
+
+    .box2{
+        width: 400px;
+        height: 100px;
+        background-color: antiquewhite;
+        position: absolute;
+    }
+
+
+    .box3{
+        width: 50px;
+        height: 50px;
+        background-color: blueviolet;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+
+//ung dung 2: -> phu 1 lop mo len the cha
+
+        div class="box1"> Toi ten la tadam
+            <div class="box2">
+                <div class="box3"></div>
+            </div>
+        </div>
+
+
+    .box1{
+        width: 100%;
+        height: 120px;
+        background-color: #111;
+        position: relative;
+    }
+
+    .box2{
+        background-color: rgba(333, 666, 447, 0.5);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+    }
+        
+
+
+position: fixed; // di chuyen trang den dau nhung phan do van xuat hen tren man hinh
+
+<body>
+        <div class="box1"> Toi ten la tadam
+            <div class="box2">
+                <div class="box3"></div>
+            </div>
+        </div>
+
+        <h1>Thong tin ca nhan</h1>
+        <ul>
+            <li>Name</li>
+            <li>Id</li>
+            <li>GPA</li>
+            <li>NS</li>
+            <li>Lop</li>
+        </ul>
+    </body>
+
+ul{
+    height: 1000px;
+}
+h1{
+    top: 100px;
+    left: 20px;
+}
+.box1{
+    /* width: 299; */
+    height: 15px;
+    background-color: #111;
+    position: fixed;
+    bottom: 0px;
+    /* top: 0px; */
+    right: 0px;
+    left: 0px;
+}
+
+
+position: sticky;    // hay hon position: fixed; nhung khong nen dung vi
+                    //  it ho tro tren nhieu ung dung
+    <body>
+        <div class="box1"> Toi ten la tadam
+            <div class="box2">
+                <div class="box3"></div>
+            </div>
+        </div>
+
+        <h1>Thong tin ca nhan</h1>
+        <ul>
+            <li>Name</li>
+            <li>Id</li>
+            <li>GPA</li>
+            <li>NS</li>
+            <li>Lop</li>
+        </ul>
+
+
+    ul{
+        height: 1000px;
+    }
+    h1{
+        margin-top: 100px;
+        left: 20px;
+    }
+    .box1{
+        /* width: 299; */
+        margin-top: 20px;
+        height: 15px;
+        padding: 0 16px;
+        background-color: #111;
+        position: sticky;
+        top: 10px;
+        right: 0px;
+        left: 0px;
+    }
+dùng position absolute: khi thuộc tinhd đó phụ thuộc vào một thuộc tính nào đó
+dùng position fixed khi thuộc tính  đó phụ thuộc vào cửa sổ trình duyệt
+
+//////////////////////////////////////////////////////////////////////////
+Cac cach can giua trong css -> 
+// cach kiem tra 1 chuc nang nao do co tinh thua ke hay khong 
+// vd: text-align css w3schools
+    text-align: center; // can giua theo chieu ngang co tinh thua ke
+    line-height: 100px; // can giua theo chieu doc
+
+    c2: su dung display: flex;  // có thể căn giữa theo cả hai chiều và nhiều thuộc tín khác nhau
+         <div class="box1"> 
+            <h1>center me</h1>
+            <h1>center me</h1>
+            <h1>center me</h1>
+            <h1>center me</h1>
+        </div>
+
+    .box1{
+        /* width: 299; */
+        height:200px;
+        background-color: #111;
+        display: flex;          // thuoc tin bat buoc phai co
+        font-size: 20px;
+    }
+
+    h1{
+        margin: auto;
+    }
+
+
+
+
+    c3: display: flex;
+    .box1{
+        /* width: 299; */
+        height:200px;
+        background-color: #111;
+        display: flex; /* thuoc tinh bat buoc phai co */
+        align-items: center; /* can giua theo chieu doc */
+        /* can giua theo chieu ngang gom nhieu the h1*/
+
+        /* justify-content: center;  */
+        /* cac the h1 dc dieu chinh va cach nhau 1 khoang nho */
+
+        /* justify-content: space-around;  */
+        /* cac the h1 dc dieu chinh va cach nhau 1 khoang nho va rong hon center*/
+        
+        justify-content: space-between; 
+        /* 2 ong ngoai cung sat ra mep */
+    }
+
+    c4:
+    
+     <body>
+        <div class="box1"> 
+            <h1>center me</h1>
+        </div>
+
+        <h2>Thong tin ca nhan</h2>
+        <ul>
+            <li>Name</li>
+            <li>Id</li>
+            <li>GPA</li>
+            <li>NS</li>
+            <li>Lop</li>
+        </ul>
+    </body>
+
+    html{
+    box-sizing: border-box;
+}
+
+.box1{
+    background-color: aqua;
+    height: 100px;
+    position: relative;
+}
+
+
+h1{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+    // công dụng khác  dấu gạch đứng khi làm menu
+    html{
+    box-sizing: border-box;
+}
+
+.box1{
+    background-color: aqua;
+    height: 100px;
+    
+}
+
+h1{
+    
+    position: relative;
+}
+h1{
+    position: absolute;
+    left: -10px;
+    content: "";
+    border-left: 3px solid #333;
+    top: 30px;
+    left: 50%;
+    transform: translateY(-50%);
+}
+ <div class="box1"> 
+            <h1>center me</h1>
+        </div>
+
+
+
+
+
+///sử lý ảnh khibij lỏi
+        <!DOCTYPE html>
+<html>
+    <head>
+        <title>F8 - Shop</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+
+        <style>
+            .box1{
+                width: 600px;
+                height: 500px;
+                background-color: aqua;
+                background-image: url(D:\Workspace\F8-shop\img\200+200.png);
+                background-repeat: no-repeat;
+                background-size: 500px 200px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- sủ dụng cho thẻ img bị lổi link -->
+        <!-- <img onerror="this.src='/img/200.png'" src="https://thienluc.vn/hinh-anh-hot-girl-dep-nhat-the-gioi/imager_82527.jpg"> -->
+
+        <!-- sủ dụng cho thẻ div bị lổi link ảnh img -->
+        <div class="box1"> 
+        </div>
+
+    </body>
+</html>

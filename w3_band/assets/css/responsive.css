@@ -1,0 +1,96 @@
+@media (max-width: 1023px) {
+    #nav .subnav a {
+        padding: 5px;
+    }
+    .btn {
+        padding: 15px 16px;
+    }
+    .content-form .form-control {
+        padding: 15px;
+    }
+    .content-contact {
+        line-height: 2.2;
+    }
+    .fb {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .fb a{
+        padding: 15px;
+    }
+    .soccial-list {
+        font-size: 25px;
+    }
+    #foter .soccial-list a{
+        margin: 0px 8px;
+    }
+    .map-section-img {
+        margin-bottom: 55px;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+@media (max-width: 740px){
+    .padding-16{
+        padding-top: 16px !important;
+    }
+    .padding-8 {
+        padding-top: 8px !important;
+    }
+    .s-col-full,
+    .s-full-width {
+        width: 100% !important;
+    }
+    .padding-30{
+        padding-top: 30px;
+    }
+    .padding-32{
+        padding-top: 32px;
+    }
+    #header {
+        overflow: hidden;
+    
+    }
+    #header .mobile-menu-btn{
+        display: block;
+    }
+    #header .search-btn {
+        display: none;
+    }
+    #nav{
+        display: block;
+    }
+    #nav > li{
+        display: block; 
+    }
+    #nav > li:first-child { 
+        /* thằng cuối cùng trong list menu bị thay đổi */
+        display: inline-block;
+    }
+    #nav li {
+        display: block;
+        padding: 1px;
+    }
+    #nav li a {
+        border-bottom: 0.5px solid #ccc;
+    }
+    #nav .subnav {
+        position: initial;
+        /* trả về mặc định không còn là con của ..*/
+    }
+    #nav .subnav a {
+        padding: 5px 65px;
+        color: #fff;
+    }
+    #nav .subnav{
+        background-color: black;
+    }
+    
+    
+    #content .member-img {
+        width: 60%;
+    }
+    
+}
